@@ -1,24 +1,15 @@
 ### Requirement
 
-DONE - User Story #1: I can see a wrapper element with a corresponding id="quote-box".
+User Story #1: I should be able to see an outer container with a corresponding id="drum-machine" that contains all other elements.
 
-DONE - User Story #2: Within #quote-box, I can see an element with a corresponding id="text".
+User Story #2: Within #drum-machine I can see an element with a corresponding id="display".
 
-DONE - User Story #3: Within #quote-box, I can see an element with a corresponding id="author".
+User Story #3: Within #drum-machine I can see 9 clickable drum pad elements, each with a class name of drum-pad, a unique id that describes the audio clip the drum pad will be set up to trigger, and an inner text that corresponds to one of the following keys on the keyboard: Q, W, E, A, S, D, Z, X, C. The drum pads MUST be in this order.
 
-DONE - User Story #4: Within #quote-box, I can see a clickable element with a corresponding id="new-quote".
+User Story #4: Within each .drum-pad, there should be an HTML5 audio element which has a src attribute pointing to an audio clip, a class name of clip, and an id corresponding to the inner text of its parent .drum-pad (e.g. id="Q", id="W", id="E" etc.).
 
-DONE - User Story #5: Within #quote-box, I can see a clickable a element with a corresponding id="tweet-quote".
+User Story #5: When I click on a .drum-pad element, the audio clip contained in its child audio element should be triggered.
 
-DONE - User Story #6: On first load, my quote machine displays a random quote in the element with id="text".
+User Story #6: When I press the trigger key associated with each .drum-pad, the audio clip contained in its child audio element should be triggered (e.g. pressing the Q key should trigger the drum pad which contains the string Q, pressing the W key should trigger the drum pad which contains the string W, etc.).
 
-DONE - User Story #7: On first load, my quote machine displays the random quote's author in the element with id="author".
-
-DONE - User Story #8: When the #new-quote button is clicked, my quote machine should fetch a new quote and display it in the #text element.
-
-DONE - User Story #9: My quote machine should fetch the new quote's author when the #new-quote button is clicked and display it in the #author element.
-
-DONE - User Story #10: I can tweet the current quote by clicking on the #tweet-quote a element. This a element should include the "twitter.
-com/intent/tweet" path in its href attribute to tweet the current quote.
-
-DONE - User Story #11: The #quote-box wrapper element should be horizontally centered. Please run tests with browser's zoom level at 100% and page maximized.
+User Story #7: When a .drum-pad is triggered, a string describing the associated audio clip is displayed as the inner text of the #display element (each string must be unique).
