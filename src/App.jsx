@@ -1,38 +1,28 @@
+import { useState } from "react";
+import DrumButton from "./DrumButton";
+import drumData from "./data.js";
 import "./App.css";
 
 function App() {
+  const [keyPress, setKeyPress] = useState("");
+
+  document.addEventListener("keypress", (e) => {
+    console.log(e.key);
+  });
+
   return (
     <>
       <div id="drum-machine">
-        <div id="display">Drum Machine</div>
+        <div id="display">{keyPress.toUpperCase()}</div>
         <div className="drums">
-          <button className="drum-pad" id="drum-q">
-            Q<audio id="Q" className="clip" src="#"></audio>
-          </button>
-          <button className="drum-pad" id="drum-w">
-            W<audio id="W" className="clip" src="#"></audio>
-          </button>
-          <button className="drum-pad" id="drum-e">
-            E<audio id="E" className="clip" src="#"></audio>
-          </button>
-          <button className="drum-pad" id="drum-a">
-            A<audio id="A" className="clip" src="#"></audio>
-          </button>
-          <button className="drum-pad" id="drum-s">
-            S<audio id="S" className="clip" src="#"></audio>
-          </button>
-          <button className="drum-pad" id="drum-d">
-            D<audio id="D" className="clip" src="#"></audio>
-          </button>
-          <button className="drum-pad" id="drum-z">
-            Z<audio id="Z" className="clip" src="#"></audio>
-          </button>
-          <button className="drum-pad" id="drum-x">
-            X<audio id="X" className="clip" src="#"></audio>
-          </button>
-          <button className="drum-pad" id="drum-c">
-            C<audio id="C" className="clip" src="#"></audio>
-          </button>
+          {drumData.map((drum, key) => (
+            <DrumButton
+              key={key}
+              id={drum.id}
+              src={drum.src}
+              setKeyPress={setKeyPress}
+            />
+          ))}
         </div>
       </div>
     </>
