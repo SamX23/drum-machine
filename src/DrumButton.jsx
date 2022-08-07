@@ -24,7 +24,10 @@ const DrumButton = ({ id = "", src, setKeyPress }) => {
       }
     });
 
-  useEffect(() => () => onKeyListener(), []);
+  useEffect(() => {
+    onKeyListener();
+    return () => onKeyListener();
+  }, []);
 
   return (
     <button
