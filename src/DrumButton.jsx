@@ -4,7 +4,9 @@ const DrumButton = ({ id = "", src, setKeyPress }) => {
   const audio = useRef(null);
 
   const onClickListener = (e) => {
-    audio.current.play();
+    try {
+      audio.current.play();
+    } catch (error) {}
     setKeyPress(id);
   };
 
