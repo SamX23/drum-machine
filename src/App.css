@@ -1,3 +1,13 @@
+#display {
+  text-align: center;
+  font-size: xx-large;
+  margin: 2rem auto;
+  font-weight: bold;
+  color: burlywood;
+  width: 300px;
+  line-height: 30px;
+}
+
 .drums {
   display: flex;
   flex-wrap: wrap;

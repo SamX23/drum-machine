@@ -4,7 +4,9 @@ import drumData from "./data.js";
 import "./App.css";
 
 function App() {
-  const [keyPress, setKeyPress] = useState("");
+  const [keyPress, setKeyPress] = useState(
+    "press any key or click button to play"
+  );
 
   return (
     <>
