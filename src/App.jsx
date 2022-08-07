@@ -6,10 +6,6 @@ import "./App.css";
 function App() {
   const [keyPress, setKeyPress] = useState("");
 
-  document.addEventListener("keypress", (e) => {
-    console.log(e.key);
-  });
-
   return (
     <>
       <div id="drum-machine">

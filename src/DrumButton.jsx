@@ -1,14 +1,30 @@
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 
 const DrumButton = ({ id = "", src, setKeyPress }) => {
   const audio = useRef(null);
 
-  const onClickListener = (e) => {
+  const playSound = () => {
     try {
+      audio.currentTime = 0;
       audio.current.play();
-    } catch (error) {}
-    setKeyPress(id);
+      setKeyPress(id);
+    } catch (error) {
+      console.log(error);
+    }
   };
+
+  const onClickListener = (e) => playSound();
+
+  const onKeyListener = () =>
+    document.addEventListener("keypress", (e) => {
+      if (e.key.toUpperCase() == id) {
+        try {
+          playSound();
+        } catch (error) {}
+      }
+    });
+
+  useEffect(() => () => onKeyListener(), []);
 
   return (
     <button
